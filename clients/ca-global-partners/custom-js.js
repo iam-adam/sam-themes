@@ -1,60 +1,51 @@
 (function() {
   'use strict';
-  
+
   // Mobile menu toggle functionality
   function initMobileMenu() {
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.main-nav');
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
     
-    if (toggle && nav) {
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        nav.classList.toggle('active');
+    if (mobileToggle && mainNav) {
+      mobileToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        
+        // Update ARIA attribute for accessibility
+        const isExpanded = mainNav.classList.contains('active');
+        mobileToggle.setAttribute('aria-expanded', isExpanded);
+        
+        // Change icon based on state
+        mobileToggle.innerHTML = isExpanded ? '✕' : '☰';
+      });
+      
+      // Close mobile menu when clicking on a link
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          mainNav.classList.remove('active');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.innerHTML = '☰';
+        });
       });
       
       // Close mobile menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.custom-header')) {
-          nav.classList.remove('active');
-        }
-      });
-      
-      // Close mobile menu on window resize if it gets too wide
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-          nav.classList.remove('active');
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.header-nav') && mainNav.classList.contains('active')) {
+          mainNav.classList.remove('active');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.innerHTML = '☰';
         }
       });
     }
   }
-  
-  // Desktop dropdown hover functionality (if dropdowns are added later)
-  function initDesktopDropdowns() {
-    const navItems = document.querySelectorAll('.main-nav li');
+
+  // Desktop navigation hover effects
+  function initDesktopNav() {
+    const navItems = document.querySelectorAll('.main-nav a');
     
     navItems.forEach(function(item) {
-      const dropdown = item.querySelector('.dropdown');
-      
-      if (dropdown) {
-        item.addEventListener('mouseenter', function() {
-          dropdown.style.display = 'block';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-          dropdown.style.display = 'none';
-        });
-      }
-    });
-  }
-  
-  // Enhanced lot grid interactions
-  function enhanceLotGrid() {
-    const lotItems = document.querySelectorAll('.aucgrid li.item-block');
-    
-    lotItems.forEach(function(item) {
-      // Add smooth hover transitions
       item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
+        this.style.transform = 'translateY(-1px)';
       });
       
       item.addEventListener('mouseleave', function() {
@@ -62,36 +53,21 @@
       });
     });
   }
-  
-  // Improve bid input interactions
-  function enhanceBidInputs() {
-    const bidInputs = document.querySelectorAll('.currency-input input, .bidfrm input[type="text"]');
+
+  // Smooth scroll for anchor links
+  function initSmoothScroll() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
     
-    bidInputs.forEach(function(input) {
-      input.addEventListener('focus', function() {
-        this.parentElement.style.borderColor = '#0066cc';
-        this.parentElement.style.boxShadow = '0 0 0 3px rgba(0, 102, 204, 0.1)';
-      });
-      
-      input.addEventListener('blur', function() {
-        this.parentElement.style.borderColor = '#ddd';
-        this.parentElement.style.boxShadow = 'none';
-      });
-    });
-  }
-  
-  // Smooth scrolling for anchor links
-  function initSmoothScrolling() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(function(link) {
+    anchorLinks.forEach(function(link) {
       link.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
         
-        if (target) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
           e.preventDefault();
           const headerHeight = document.querySelector('.custom-header').offsetHeight;
-          const targetPosition = target.offsetTop - headerHeight - 20;
+          const targetPosition = targetElement.offsetTop - headerHeight - 20;
           
           window.scrollTo({
             top: targetPosition,
@@ -101,44 +77,55 @@
       });
     });
   }
-  
+
+  // Handle window resize
+  function handleResize() {
+    const mainNav = document.querySelector('.main-nav');
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (window.innerWidth > 768) {
+      if (mainNav) {
+        mainNav.classList.remove('active');
+      }
+      if (mobileToggle) {
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.innerHTML = '☰';
+      }
+    }
+  }
+
   // Initialize all functionality when DOM is ready
   function init() {
     initMobileMenu();
-    initDesktopDropdowns();
-    enhanceLotGrid();
-    enhanceBidInputs();
-    initSmoothScrolling();
+    initDesktopNav();
+    initSmoothScroll();
     
-    // Re-run enhancements for dynamically loaded content
-    const observer = new MutationObserver(function(mutations) {
-      let shouldUpdate = false;
-      
-      mutations.forEach(function(mutation) {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-          shouldUpdate = true;
+    // Handle window resize
+    window.addEventListener('resize', handleResize);
+    
+    // Add loading animation to buttons
+    const buttons = document.querySelectorAll('.unibtn a, .unibtn input, #btnSearch');
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        if (!this.classList.contains('loading')) {
+          this.classList.add('loading');
+          const originalText = this.textContent || this.value;
+          this.textContent = this.value = 'Loading...';
+          
+          setTimeout(() => {
+            this.classList.remove('loading');
+            this.textContent = this.value = originalText;
+          }, 2000);
         }
       });
-      
-      if (shouldUpdate) {
-        setTimeout(function() {
-          enhanceLotGrid();
-          enhanceBidInputs();
-        }, 100);
-      }
-    });
-    
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
     });
   }
-  
-  // Start when DOM is ready
+
+  // Wait for DOM to be ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
-  
+
 })();
