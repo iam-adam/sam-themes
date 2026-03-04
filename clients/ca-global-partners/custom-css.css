@@ -1,1 +1,372 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); header#headsec { display: none !important; } #logo-container { display: none !important; } section.auctitle .account-info { display: none !important; } .sale-no { display: none !important; } body { margin-top: 65px !important; font-family: Inter, sans-serif; color: #2c3e50; line-height: 1.6; } #wrapper { max-width: 1280px; width: 98%; margin: 0 auto; } .custom-header-wrapper { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 65px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); } .custom-header { max-width: 1280px; width: 98%; margin: 0 auto; height: 65px; display: flex; align-items: center; justify-content: space-between; } .custom-header .logo img { height: 45px; width: auto; } .desktop-navigation { display: flex; align-items: center; } .desktop-navigation ul { display: flex; list-style: none; margin: 0; padding: 0; gap: 30px; } .desktop-navigation ul li a { color: #1a5276; text-decoration: none; font-weight: 500; padding: 8px 0; transition: color 0.3s ease; } .desktop-navigation ul li a:hover { color: #e74c3c; } .cstm-mobile-hamburger-menu { display: none; background: none; border: none; color: #1a5276; font-size: 24px; cursor: pointer; } .mobile-right-side-menu { position: fixed; top: 65px; right: 0; width: 300px; height: calc(100vh - 65px); background: #fff; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: -2px 0 10px rgba(0,0,0,0.1); z-index: 999; } .mobile-right-side-menu.active { transform: translateX(0); } .mobile-right-side-menu ul { list-style: none; margin: 0; padding: 20px 0; } .mobile-right-side-menu ul li a { display: block; padding: 15px 20px; color: #1a5276; text-decoration: none; font-weight: 500; border-bottom: 1px solid #eee; } .mobile-right-side-menu ul li a:hover { background: #f8f9fa; color: #e74c3c; } .unibtn a.orng, .unibtn input[type="button"].blu, .unibtn input[type="submit"].orng, .unibtn input[type="button"].orng, .unibtn a.blu, .unibtn a.drkblu, .unibtn input[type="button"].drkblu, div#general-notification a.reg, ul.auclting li.auclink > div a.reg, ul.auclting li.auclink > div a.cat, #btnSearch, .lot-details .auc_info a.ask, #addToWatchlist, #removeFromWatchlist { background: #1a5276 !important; color: #fff !important; border: 2px solid #1a5276 !important; border-radius: 5px !important; padding: 10px 20px !important; font-weight: 600 !important; text-decoration: none !important; display: inline-block !important; transition: all 0.3s ease !important; font-family: Inter, sans-serif !important; } .unibtn a.orng:hover, .unibtn input[type="button"].blu:hover, .unibtn input[type="submit"].orng:hover, .unibtn input[type="button"].orng:hover, .unibtn a.blu:hover, .unibtn a.drkblu:hover, .unibtn input[type="button"].drkblu:hover, div#general-notification a.reg:hover, ul.auclting li.auclink > div a.reg:hover, ul.auclting li.auclink > div a.cat:hover, #btnSearch:hover, .lot-details .auc_info a.ask:hover, #addToWatchlist:hover, #removeFromWatchlist:hover { background: #e74c3c !important; border-color: #e74c3c !important; } .aucgrid li.item-block { width: calc(16.66% - 6px) !important; margin: 3px !important; background: #fff !important; border: 1px solid #eee !important; border-radius: 8px !important; overflow: hidden !important; transition: transform 0.3s ease, box-shadow 0.3s ease !important; } .aucgrid li.item-block:hover { transform: translateY(-2px) !important; box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important; } .aucgrid li > section > figure a img { height: 200px !important; width: 100% !important; object-fit: contain !important; background: #f8f9fa !important; } .aucgrid li > section div.bdttle h2 a { color: #1a5276 !important; font-weight: 600 !important; text-decoration: none !important; font-size: 14px !important; } .aucgrid li > section div.bdttle h2 a:hover { color: #e74c3c !important; } ul.auclting li.aucimg { width: 300px !important; height: 180px !important; } ul.auclting li.aucimg img { width: 100% !important; height: 100% !important; object-fit: contain !important; background: #f8f9fa !important; } ul.auclting li.aucdes { flex: 1 !important; padding: 15px !important; } ul.auclting li.aucdes h6 a { color: #1a5276 !important; font-weight: 600 !important; text-decoration: none !important; font-size: 16px !important; } ul.auclting li.aucdes h6 a:hover { color: #e74c3c !important; } ul.auclting li.auclink { width: 140px !important; padding: 15px !important; } .timelft a, .qdatarepeater-ctl .timelft a { color: #27ae60 !important; font-weight: 600 !important; } .auctitle > div.tle h3 { color: #1a5276 !important; font-weight: 700 !important; font-size: 28px !important; margin-bottom: 10px !important; } .bdttle h2 a { color: #1a5276 !important; font-weight: 600 !important; } .aucgrid .bdinfo section span.currency-input input, .bidfrm fieldset > ul li input[type="text"] { border: 2px solid #1a5276 !important; border-radius: 5px !important; padding: 8px 12px !important; font-family: Inter, sans-serif !important; } .lot-details .auc_info { width: 49.5% !important; background: #fff !important; border: 1px solid #eee !important; border-radius: 8px !important; padding: 20px !important; } .auc_slide { width: 49% !important; } #slider4.rslides li figure a img { max-height: 380px !important; width: 100% !important; object-fit: contain !important; background: #f8f9fa !important; } div.toppag .pagintn .paginator span, .pagintn > div.page { background: #1a5276 !important; color: #fff !important; border-radius: 3px !important; } .breadcrumbsWrapper ol.breadcrumbs > li > a { color: #1a5276 !important; text-decoration: none !important; } .breadcrumbsWrapper ol.breadcrumbs > li > a:hover { color: #e74c3c !important; } .reserve-not-met { color: #e74c3c !important; font-weight: 600 !important; } .youre-winning { color: #27ae60 !important; font-weight: 600 !important; } .custom-footer-wrapper { background: #2c3e50; color: #fff; padding: 40px 0; margin-top: 40px; } .custom-footer { max-width: 1280px; width: 98%; margin: 0 auto; } .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px; } .footer-section h4 { color: #fff; margin-bottom: 15px; font-weight: 600; } .footer-section p, .footer-section a { color: #bdc3c7; text-decoration: none; line-height: 1.6; } .footer-section a:hover { color: #fff; } .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #34495e; color: #bdc3c7; } @media (max-width: 1200px) { .aucgrid li.item-block { width: calc(20% - 6px) !important; } } @media (max-width: 992px) { .aucgrid li.item-block { width: calc(25% - 6px) !important; } .desktop-navigation { display: none; } .cstm-mobile-hamburger-menu { display: block; } } @media (max-width: 880px) { .aucgrid li.item-block { width: calc(33.33% - 6px) !important; } } @media (max-width: 768px) { .custom-header { padding: 0 15px; } .mobile-right-side-menu { width: 100%; } .lot-details .auc_info, .auc_slide { width: 100% !important; } } @media (max-width: 568px) { .aucgrid li.item-block { width: calc(50% - 6px) !important; } ul.auclting li { flex-direction: column !important; } ul.auclting li.aucimg { width: 100% !important; height: 200px !important; } ul.auclting li.aucdes, ul.auclting li.auclink { width: 100% !important; } }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Hide native SAM elements */
+header#headsec { display: none !important; }
+#logo-container { display: none !important; }
+section.auctitle .account-info { display: none !important; }
+.sale-no { display: none !important; }
+
+/* Body offset for fixed header */
+body { margin-top: 65px !important; font-family: 'Inter', sans-serif; }
+
+/* Main wrapper */
+#wrapper { max-width: 1280px; width: 98%; }
+
+/* Header styles */
+.custom-header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 65px;
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 10px rgba(26,82,118,0.1);
+}
+
+.cstm-header-nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+}
+
+.cstm-header-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.desktop-navigation a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.desktop-navigation a:hover {
+  color: #1a5276;
+}
+
+.cstm-mobile-hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+.mobile-right-side-menu {
+  position: fixed;
+  top: 65px;
+  right: 0;
+  width: 280px;
+  height: calc(100vh - 65px);
+  background: #fff;
+  border-left: 1px solid #e9ecef;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+}
+
+.mobile-right-side-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-right-side-menu a {
+  display: block;
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 15px 0;
+  border-bottom: 1px solid #f8f9fa;
+  font-weight: 500;
+}
+
+/* Primary buttons */
+.unibtn a.orng,
+.unibtn input[type="button"].blu,
+.unibtn input[type="submit"].orng,
+.unibtn input[type="button"].orng,
+.unibtn a.blu,
+.unibtn a.drkblu,
+.unibtn input[type="button"].drkblu,
+div#general-notification a.reg,
+ul.auclting li.auclink > div a.reg,
+ul.auclting li.auclink > div a.cat,
+#btnSearch,
+.lot-details .auc_info a.ask,
+#addToWatchlist,
+#removeFromWatchlist {
+  background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%) !important;
+  border: none !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 6px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  font-size: 13px !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(26,82,118,0.2) !important;
+}
+
+.unibtn a.orng:hover,
+.unibtn input[type="button"].blu:hover,
+.unibtn input[type="submit"].orng:hover,
+.unibtn input[type="button"].orng:hover,
+.unibtn a.blu:hover,
+.unibtn a.drkblu:hover,
+.unibtn input[type="button"].drkblu:hover,
+div#general-notification a.reg:hover,
+ul.auclting li.auclink > div a.reg:hover,
+ul.auclting li.auclink > div a.cat:hover,
+#btnSearch:hover,
+.lot-details .auc_info a.ask:hover,
+#addToWatchlist:hover,
+#removeFromWatchlist:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(26,82,118,0.3) !important;
+}
+
+/* Lot grid cards */
+.aucgrid li.item-block {
+  width: calc(16.66% - 6px) !important;
+  margin: 3px !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.aucgrid li.item-block:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(26,82,118,0.15) !important;
+}
+
+.aucgrid li > section > figure a img {
+  height: 200px !important;
+  object-fit: contain !important;
+  width: 100% !important;
+  background: #f8f9fa !important;
+}
+
+.aucgrid li > section div.bdttle h2 a {
+  color: #2c3e50 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.aucgrid li > section div.bdttle h2 a:hover {
+  color: #1a5276 !important;
+}
+
+/* Lot list view */
+ul.auclting li.aucimg {
+  width: 300px !important;
+  height: 180px !important;
+}
+
+ul.auclting li.aucdes {
+  flex: 1 !important;
+  padding: 0 20px !important;
+}
+
+ul.auclting li.auclink {
+  width: 140px !important;
+}
+
+/* Countdown timers */
+.timelft a,
+.qdatarepeater-ctl .timelft a {
+  color: #27ae60 !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Auction headings */
+.auctitle > div.tle h3,
+ul.auclting li.aucdes h6 a,
+.bdttle h2 a {
+  color: #1a5276 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Bid input */
+.aucgrid .bdinfo section span.currency-input,
+.bidfrm fieldset > ul li input[type="text"] {
+  border: 2px solid #e9ecef !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  font-family: 'Inter', sans-serif !important;
+  transition: border-color 0.3s ease !important;
+}
+
+.aucgrid .bdinfo section span.currency-input:focus,
+.bidfrm fieldset > ul li input[type="text"]:focus {
+  border-color: #1a5276 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(26,82,118,0.1) !important;
+}
+
+/* Lot detail page */
+.lot-details .auc_info {
+  width: 49.5% !important;
+}
+
+.auc_slide {
+  width: 49% !important;
+}
+
+#slider4.rslides li figure a img {
+  max-height: 380px !important;
+  object-fit: contain !important;
+}
+
+/* Pagination */
+div.toppag .pagintn .paginator span,
+.pagintn > div.page {
+  background: #1a5276 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Breadcrumbs */
+.breadcrumbsWrapper ol.breadcrumbs > li > a {
+  color: #1a5276 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Reserve status */
+.reserve-not-met {
+  color: #e74c3c !important;
+  font-weight: 600 !important;
+}
+
+.youre-winning {
+  color: #27ae60 !important;
+  font-weight: 600 !important;
+}
+
+/* Footer styles */
+.custom-footer-wrapper {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+}
+
+.cstm-footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.cstm-footer-content h3 {
+  color: #1a5276;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cstm-footer-content p {
+  color: #bdc3c7;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.cstm-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.cstm-footer-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cstm-footer-links a:hover {
+  color: #1a5276;
+}
+
+.cstm-footer-copyright {
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+  margin-top: 20px;
+  color: #95a5a6;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .aucgrid li.item-block {
+    width: calc(20% - 6px) !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .aucgrid li.item-block {
+    width: calc(25% - 6px) !important;
+  }
+  
+  .desktop-navigation {
+    display: none;
+  }
+  
+  .cstm-mobile-hamburger-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 880px) {
+  .aucgrid li.item-block {
+    width: calc(33.33% - 6px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cstm-footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 568px) {
+  .aucgrid li.item-block {
+    width: calc(50% - 6px) !important;
+  }
+  
+  ul.auclting li {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  ul.auclting li.aucimg,
+  ul.auclting li.aucdes,
+  ul.auclting li.auclink {
+    width: 100% !important;
+  }
+}
