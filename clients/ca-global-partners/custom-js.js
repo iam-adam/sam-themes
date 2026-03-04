@@ -1,184 +1,140 @@
-(function(){
+(function() {
   'use strict';
   
-  // Mobile menu toggle
+  // Mobile menu toggle functionality
   function initMobileMenu() {
-    const toggle = document.querySelector('.mobile-toggle');
+    const toggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
     
     if (toggle && nav) {
-      toggle.addEventListener('click', function() {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
         nav.classList.toggle('active');
-        
-        // Update aria-expanded for accessibility
-        const expanded = nav.classList.contains('active');
-        toggle.setAttribute('aria-expanded', expanded);
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.custom-header')) {
+          nav.classList.remove('active');
+        }
+      });
+      
+      // Close mobile menu on window resize if it gets too wide
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          nav.classList.remove('active');
+        }
       });
     }
   }
   
-  // Close mobile menu when clicking outside
-  function initMobileMenuClose() {
-    document.addEventListener('click', function(e) {
-      const nav = document.querySelector('.main-nav');
-      const toggle = document.querySelector('.mobile-toggle');
-      
-      if (nav && toggle && nav.classList.contains('active')) {
-        if (!nav.contains(e.target) && !toggle.contains(e.target)) {
-          nav.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-  }
-  
-  // Desktop dropdown hover effects
+  // Desktop dropdown hover functionality (if dropdowns are added later)
   function initDesktopDropdowns() {
     const navItems = document.querySelectorAll('.main-nav li');
     
     navItems.forEach(function(item) {
-      const dropdown = item.querySelector('.dropdown-menu');
+      const dropdown = item.querySelector('.dropdown');
       
       if (dropdown) {
         item.addEventListener('mouseenter', function() {
-          if (window.innerWidth > 768) {
-            dropdown.style.display = 'block';
-            dropdown.style.opacity = '0';
-            dropdown.style.transform = 'translateY(-10px)';
-            
-            setTimeout(function() {
-              dropdown.style.opacity = '1';
-              dropdown.style.transform = 'translateY(0)';
-            }, 10);
-          }
+          dropdown.style.display = 'block';
         });
         
         item.addEventListener('mouseleave', function() {
-          if (window.innerWidth > 768) {
-            dropdown.style.opacity = '0';
-            dropdown.style.transform = 'translateY(-10px)';
-            
-            setTimeout(function() {
-              dropdown.style.display = 'none';
-            }, 200);
-          }
+          dropdown.style.display = 'none';
         });
       }
     });
   }
   
-  // Enhanced lot grid animations
-  function initLotGridAnimations() {
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '50px 0px -50px 0px'
-    });
-    
+  // Enhanced lot grid interactions
+  function enhanceLotGrid() {
     const lotItems = document.querySelectorAll('.aucgrid li.item-block');
-    lotItems.forEach(function(item, index) {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(30px)';
-      item.style.transition = 'opacity 0.6s ease ' + (index * 0.1) + 's, transform 0.6s ease ' + (index * 0.1) + 's';
-      observer.observe(item);
+    
+    lotItems.forEach(function(item) {
+      // Add smooth hover transitions
+      item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+  }
+  
+  // Improve bid input interactions
+  function enhanceBidInputs() {
+    const bidInputs = document.querySelectorAll('.currency-input input, .bidfrm input[type="text"]');
+    
+    bidInputs.forEach(function(input) {
+      input.addEventListener('focus', function() {
+        this.parentElement.style.borderColor = '#0066cc';
+        this.parentElement.style.boxShadow = '0 0 0 3px rgba(0, 102, 204, 0.1)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentElement.style.borderColor = '#ddd';
+        this.parentElement.style.boxShadow = 'none';
+      });
     });
   }
   
   // Smooth scrolling for anchor links
   function initSmoothScrolling() {
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    const links = document.querySelectorAll('a[href^="#"]');
     
-    anchorLinks.forEach(function(link) {
+    links.forEach(function(link) {
       link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
+        const target = document.querySelector(this.getAttribute('href'));
         
-        if (href !== '#' && href.length > 1) {
-          const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerHeight = document.querySelector('.custom-header').offsetHeight;
+          const targetPosition = target.offsetTop - headerHeight - 20;
           
-          if (target) {
-            e.preventDefault();
-            
-            const headerHeight = document.querySelector('.custom-header').offsetHeight;
-            const targetPosition = target.offsetTop - headerHeight - 20;
-            
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
         }
       });
     });
   }
   
-  // Form enhancements
-  function initFormEnhancements() {
-    const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
-    
-    inputs.forEach(function(input) {
-      // Add focus/blur classes for styling
-      input.addEventListener('focus', function() {
-        this.classList.add('focused');
-      });
-      
-      input.addEventListener('blur', function() {
-        this.classList.remove('focused');
-        if (this.value) {
-          this.classList.add('has-value');
-        } else {
-          this.classList.remove('has-value');
-        }
-      });
-      
-      // Check initial value
-      if (input.value) {
-        input.classList.add('has-value');
-      }
-    });
-  }
-  
-  // Handle window resize
-  function initResizeHandler() {
-    let resizeTimer;
-    
-    window.addEventListener('resize', function() {
-      clearTimeout(resizeTimer);
-      
-      resizeTimer = setTimeout(function() {
-        const nav = document.querySelector('.main-nav');
-        const toggle = document.querySelector('.mobile-toggle');
-        
-        // Close mobile menu on desktop
-        if (window.innerWidth > 768 && nav && nav.classList.contains('active')) {
-          nav.classList.remove('active');
-          if (toggle) {
-            toggle.setAttribute('aria-expanded', 'false');
-          }
-        }
-      }, 250);
-    });
-  }
-  
-  // Initialize all functions when DOM is ready
+  // Initialize all functionality when DOM is ready
   function init() {
     initMobileMenu();
-    initMobileMenuClose();
     initDesktopDropdowns();
+    enhanceLotGrid();
+    enhanceBidInputs();
     initSmoothScrolling();
-    initFormEnhancements();
-    initResizeHandler();
     
-    // Initialize animations after a short delay
-    setTimeout(initLotGridAnimations, 500);
+    // Re-run enhancements for dynamically loaded content
+    const observer = new MutationObserver(function(mutations) {
+      let shouldUpdate = false;
+      
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+          shouldUpdate = true;
+        }
+      });
+      
+      if (shouldUpdate) {
+        setTimeout(function() {
+          enhanceLotGrid();
+          enhanceBidInputs();
+        }, 100);
+      }
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
   }
   
-  // Wait for DOM to be ready
+  // Start when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
