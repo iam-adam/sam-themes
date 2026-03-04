@@ -1,25 +1,27 @@
 <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet'>
-<link rel="stylesheet" type="text/css" href="/assets/custom/depot/client-header-footer.css">
+<link rel="stylesheet" href="/assets/custom/depot/client-header-footer.css">
 
-<div class="custom-header">
+<header class="custom-header">
   <div class="header-container">
     <div class="header-logo">
       <a href=".">
         <img src="https://cdn.jsdelivr.net/gh/iam-adam/sam-themes@main/clients/ca-global-partners/images/logo.png" alt="CA Global Partners">
       </a>
     </div>
+    
     <nav class="header-nav">
-      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
         ☰
       </button>
-      <ul class="main-nav">
-        <li><a href="./about-us/">About Us</a></li>
-        <li><a href="./about-us/services/">Services</a></li>
-        <li><a href="./auction-brochures/">Auction Brochures</a></li>
-        <li><a href="./global-partners-team/">Global Partners Team</a></li>
-        <li><a href="./bidding-at-auction/">Bidding at Auction</a></li>
-        <li><a href="./contactus/">Contact Us</a></li>
+      
+      <ul class="main-nav" role="menubar" aria-hidden="true">
+        <li role="none"><a href="./about-us/" role="menuitem">About Us</a></li>
+        <li role="none"><a href="./about-us/services/" role="menuitem">Services</a></li>
+        <li role="none"><a href="./auction-brochures/" role="menuitem">Auction Brochures</a></li>
+        <li role="none"><a href="./global-partners-team/" role="menuitem">Global Partners Team</a></li>
+        <li role="none"><a href="./bidding-at-auction/" role="menuitem">Bidding at Auction</a></li>
+        <li role="none"><a href="./contactus/" role="menuitem">Contact Us</a></li>
       </ul>
     </nav>
   </div>
-</div>
+</header>
