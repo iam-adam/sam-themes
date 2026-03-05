@@ -1,3 +1,5 @@
+(function(){
+'use strict';
 $(document).ready(function () {
   console.log("ready");
   var myBody = $('body');
@@ -541,3 +543,4 @@ $(document).ready(function () {
 
 
 });
+})();
