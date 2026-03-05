@@ -10,6 +10,10 @@
 
 /* common starts */
 
+/* ── CHANGE v3 · 2026-03-04 20:08 ───────────────
+   Request: "make the view catalog buttons on the /auctions page 50% wider"
+   Changed: Increased width of auction listing buttons by 50%
+   ────────────────────────────────────────────────────────── */
 ul.auclting li.auclink>div a.reg,
 ul.auclting li.auclink>div a.reg:hover,
 .unibtn a.orng,
@@ -22,6 +26,7 @@ ul.auclting li.auclink>div a.reg:hover,
   color: #ffffff;
   font-weight: 600;
   box-shadow: none;
+  width: 150% !important;
 }
 
 ul.auclting li.auclink>div a {
