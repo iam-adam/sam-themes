@@ -1,0 +1,350 @@
+/* SAM Test 1 Theme CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Hide native SAM elements */
+header#headsec { display: none !important; }
+#logo-container { display: none !important; }
+section.auctitle .account-info { display: none !important; }
+.sale-no { display: none !important; }
+
+/* Base styles */
+body {
+    margin-top: 65px !important;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+}
+
+#wrapper {
+    max-width: 1280px;
+    width: 98%;
+}
+
+/* Custom Header */
+.custom-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 65px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1280px;
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.header-logo {
+    height: 45px;
+}
+
+.header-logo img {
+    height: 100%;
+    width: auto;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav {
+    list-style: none;
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 15px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.main-nav a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Primary buttons */
+.unibtn a.orng, .unibtn input[type="button"].blu, .unibtn input[type="submit"].orng,
+.unibtn input[type="button"].orng, .unibtn a.blu, .unibtn a.drkblu,
+.unibtn input[type="button"].drkblu, div#general-notification a.reg,
+ul.auclting li.auclink > div a.reg, ul.auclting li.auclink > div a.cat,
+#btnSearch, .lot-details .auc_info a.ask, #addToWatchlist, #removeFromWatchlist {
+    background-color: #0066cc !important;
+    border-color: #0066cc !important;
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 8px 16px !important;
+    transition: background-color 0.2s;
+}
+
+.unibtn a.orng:hover, .unibtn input[type="button"].blu:hover, .unibtn input[type="submit"].orng:hover,
+.unibtn input[type="button"].orng:hover, .unibtn a.blu:hover, .unibtn a.drkblu:hover,
+.unibtn input[type="button"].drkblu:hover, div#general-notification a.reg:hover,
+ul.auclting li.auclink > div a.reg:hover, ul.auclting li.auclink > div a.cat:hover,
+#btnSearch:hover, .lot-details .auc_info a.ask:hover, #addToWatchlist:hover, #removeFromWatchlist:hover {
+    background-color: #0052a3 !important;
+}
+
+/* Lot grid */
+.aucgrid li.item-block {
+    width: calc(16.66% - 6px);
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.aucgrid li.item-block:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Lot images */
+.aucgrid li > section > figure a img {
+    height: 200px;
+    object-fit: contain;
+    width: 100%;
+}
+
+/* Lot titles */
+.aucgrid li > section div.bdttle h2 a {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.aucgrid li > section div.bdttle h2 a:hover {
+    color: #0066cc;
+}
+
+/* Lot list view */
+ul.auclting li.aucimg {
+    width: 300px;
+}
+
+ul.auclting li.aucdes {
+    flex: 1;
+}
+
+ul.auclting li.auclink {
+    width: 140px;
+}
+
+/* Timers */
+.timelft a, .qdatarepeater-ctl .timelft a {
+    color: #28a745 !important;
+    font-weight: bold;
+}
+
+/* Headings */
+.auctitle > div.tle h3 {
+    font-family: Georgia, Times, serif;
+    color: #000000;
+    font-size: 28px;
+}
+
+ul.auclting li.aucdes h6 a, .bdttle h2 a {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+}
+
+ul.auclting li.aucdes h6 a:hover, .bdttle h2 a:hover {
+    color: #0066cc;
+}
+
+/* Bid input */
+.aucgrid .bdinfo section span.currency-input, .bidfrm fieldset > ul li input[type="text"] {
+    border: 2px solid #0066cc;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+/* Lot detail */
+.lot-details .auc_info {
+    width: 49.5%;
+}
+
+.auc_slide {
+    width: 49%;
+}
+
+/* Lot detail image */
+#slider4.rslides li figure a img {
+    max-height: 380px;
+    object-fit: contain;
+    width: 100%;
+}
+
+/* Pagination */
+div.toppag .pagintn .paginator span, .pagintn > div.page {
+    background-color: #0066cc;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Breadcrumbs */
+.breadcrumbsWrapper ol.breadcrumbs > li > a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.breadcrumbsWrapper ol.breadcrumbs > li > a:hover {
+    text-decoration: underline;
+}
+
+/* Status indicators */
+.reserve-not-met {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+.youre-winning {
+    color: #28a745 !important;
+    font-weight: bold;
+}
+
+/* Custom Footer */
+.custom-footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 40px 0 20px;
+}
+
+.footer-container {
+    max-width: 1280px;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-section a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+    font-size: 14px;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .aucgrid li.item-block {
+        width: calc(20% - 6px);
+    }
+}
+
+@media (max-width: 992px) {
+    .aucgrid li.item-block {
+        width: calc(25% - 6px);
+    }
+}
+
+@media (max-width: 880px) {
+    .aucgrid li.item-block {
+        width: calc(33.33% - 6px);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #000000;
+    }
+    
+    .main-nav.active {
+        display: flex;
+    }
+    
+    .main-nav a {
+        border-bottom: 1px solid #333;
+    }
+}
+
+@media (max-width: 568px) {
+    body {
+        margin-top: 60px !important;
+    }
+    
+    .custom-header {
+        height: 60px;
+    }
+    
+    .main-nav {
+        top: 60px;
+    }
+    
+    .aucgrid li.item-block {
+        width: calc(50% - 6px);
+    }
+    
+    ul.auclting li {
+        display: block;
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+}
